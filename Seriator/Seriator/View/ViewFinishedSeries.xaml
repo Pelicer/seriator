@@ -1,0 +1,76 @@
+﻿<Window x:Name="FinishedSeries" x:Class="Seriator.View.ViewFinishedSeries"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Seriator.View"
+        mc:Ignorable="d"
+        Title="Finished Anime" Height="650" Width="1040" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Closing="FinishedSeries_Closing" Loaded="FinishedSeries_Loaded" Background="{x:Null}" Icon="/Seriator;component/Images/Icons/icon.png">
+
+    <!-- Remove button hover property-->
+    <Window.Resources>
+        <Style x:Key="NoHover" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!-- End of property-->
+    <Grid x:Name="FinishedSeriesWindow">
+        <DataGrid x:Name="tblFinishedSeries" AutoGenerateColumns="False"  AreRowDetailsFrozen="True" SelectionMode="Single" HorizontalAlignment="Left" Height="340" Margin="10,192,0,0" VerticalAlignment="Top" Width="1012" IsReadOnly="True" Opacity="0.5" MouseDoubleClick="tblFinishedSeries_MouseDoubleClick" PreviewKeyDown="tblFinishedSeries_PreviewKeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cod."  Width="50" Binding="{Binding SeriesId}" />
+                <DataGridTextColumn Header="Série"  Width="460" Binding="{Binding SeriesTitle}" />
+                <DataGridTextColumn Header="Categoria"  Width="100" Binding="{Binding SeriesCategory}" />
+                <DataGridTextColumn Header="Temporadas"  Width="90" Binding="{Binding SeriesSeason}" />
+                <DataGridTextColumn Header="Episódios"  Width="90" Binding="{Binding SeriesEpisodes}" />
+                <DataGridTextColumn Header="Duração"  Width="90" Binding="{Binding SeriesDuration}" />
+                <DataGridTextColumn Header="Data Final"  Width="120" Binding="{Binding SeriesFinishDate, StringFormat=dd/MM/yyyy}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblTitle" Content="Séries Finalizadas" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="48" FontFamily="Mongolian Baiti" Margin="92,27,0,0"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="0,46,0,0" VerticalAlignment="Top" Width="685" Background="White"/>
+        <Button x:Name="btnNew" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="10,120,0,0" Height="50" BorderThickness="0" Style="{StaticResource NoHover}" Click="btnNew_Click" ToolTip="Clique aqui para cadastrar uma nova série finalizada">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/add-3.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnDelete" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="74,120,0,0" Height="50" BorderThickness="0" Style="{StaticResource NoHover}" Click="btnDelete_Click" ToolTip="Clique aqui para deletar a série selecionada">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/close.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEdit" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="140,120,0,0" Height="50" BorderThickness="0" Style="{StaticResource NoHover}" ToolTip="Clique aqui para editar a série selecionada" Click="btnEdit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/edit.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnSearch" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="207,120,0,0" Height="50" BorderThickness="0" Style="{StaticResource NoHover}" Click="btnSearch_Click" ToolTip="Clique aqui para filtrar as séries por seus títulos">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/search-1.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnPrevious" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Margin="972,559,0,0" Height="50" ToolTip="Clique aqui para ir para a tela anterior" BorderThickness="0" Click="btnPrevious_Click" Style="{StaticResource NoHover}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/exit-1.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtSearchTitle" HorizontalAlignment="Left" Height="29" Margin="257,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Background="{x:Null}" BorderThickness="0,0,0,2" BorderBrush="#FFF1D242" FontSize="21.333" FontFamily="Mongolian Baiti" TextChanged="txtSearchTitle_TextChanged" Visibility="Hidden"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Margin="7,35,0,0" Source="/Seriator;component/Images/Icons/icon.png"/>
+
+    </Grid>
+</Window>

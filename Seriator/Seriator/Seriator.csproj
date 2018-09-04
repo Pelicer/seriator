@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{737DC0C1-2BE8-4F8E-B11B-090CD28042C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Seriator</RootNamespace>
+    <AssemblyName>Seriator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Controller\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\Model.DAO\SeriesDAO.cs" />
+    <Compile Include="View\ViewAccountConfiguration.xaml.cs">
+      <DependentUpon>ViewAccountConfiguration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewAccountRegistration.xaml.cs">
+      <DependentUpon>ViewAccountRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewAccountStatus.xaml.cs">
+      <DependentUpon>ViewAccountStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCurrentSeries.xaml.cs">
+      <DependentUpon>ViewCurrentSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewFinishedSeries.xaml.cs">
+      <DependentUpon>ViewFinishedSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewMainMenu.xaml.cs">
+      <DependentUpon>ViewMainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewPendingSeries.xaml.cs">
+      <DependentUpon>ViewPendingSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewSeriesRegistration.xaml.cs">
+      <DependentUpon>ViewSeriesRegistration.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controller\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Controller\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controller\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\ViewAccountConfiguration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewAccountRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewAccountStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewCurrentSeries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewFinishedSeries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewMainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewPendingSeries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewSeriesRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Model.DAO\AccountDAO.cs" />
+    <Compile Include="Model\Model.DAO\ConnectionFactory.cs" />
+    <Compile Include="Model\Model.DAO\LoginDAO.cs" />
+    <Compile Include="Model\ModelAccount.cs" />
+    <Compile Include="Model\ModelSeries.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controller\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\selectImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\add-3.png" />
+    <Resource Include="Images\Icons\close.png" />
+    <Resource Include="Images\Icons\edit.png" />
+    <Resource Include="Images\Icons\exit-1.png" />
+    <Resource Include="Images\Icons\folder-1.png" />
+    <Resource Include="Images\Icons\notebook-3.png" />
+    <Resource Include="Images\Icons\search-1.png" />
+    <Resource Include="Images\Icons\settings-1.png" />
+    <Resource Include="Images\Icons\switch-6.png" />
+    <Resource Include="Images\Icons\switch-7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\0.png" />
+    <Resource Include="Images\Icons\agenda.png" />
+    <Resource Include="Images\Icons\alarm-1.png" />
+    <Resource Include="Images\Icons\alarm-clock.png" />
+    <Resource Include="Images\Icons\archive-1.png" />
+    <Resource Include="Images\Icons\archive-2.png" />
+    <Resource Include="Images\Icons\attachment.png" />
+    <Resource Include="Images\Icons\back.png" />
+    <Resource Include="Images\Icons\bookmark-1.png" />
+    <Resource Include="Images\Icons\bookmark.png" />
+    <Resource Include="Images\Icons\calendar.png" />
+    <Resource Include="Images\Icons\checked-1.png" />
+    <Resource Include="Images\Icons\clock-1.png" />
+    <Resource Include="Images\Icons\clock.png" />
+    <Resource Include="Images\Icons\controls-5.png" />
+    <Resource Include="Images\Icons\edit-1.png" />
+    <Resource Include="Images\Icons\error.png" />
+    <Resource Include="Images\Icons\flag-3.png" />
+    <Resource Include="Images\Icons\flag-4.png" />
+    <Resource Include="Images\Icons\focus.png" />
+    <Resource Include="Images\Icons\garbage-1.png" />
+    <Resource Include="Images\Icons\hourglass-1.png" />
+    <Resource Include="Images\Icons\infinity.png" />
+    <Resource Include="Images\Icons\info.png" />
+    <Resource Include="Images\Icons\list.png" />
+    <Resource Include="Images\Icons\locked-2.png" />
+    <Resource Include="Images\Icons\locked-3.png" />
+    <Resource Include="Images\Icons\login.png" />
+    <Resource Include="Images\Icons\notepad.png" />
+    <Resource Include="Images\Icons\perspective.png" />
+    <Resource Include="Images\Icons\plus.png" />
+    <Resource Include="Images\Icons\power.png" />
+    <Resource Include="Images\Icons\search.png" />
+    <Resource Include="Images\Icons\settings-4.png" />
+    <Resource Include="Images\Icons\settings-7.png" />
+    <Resource Include="Images\Icons\settings-8.png" />
+    <Resource Include="Images\Icons\settings-9.png" />
+    <Resource Include="Images\Icons\success.png" />
+    <Resource Include="Images\Icons\tabs-1.png" />
+    <Resource Include="Images\Icons\tabs.png" />
+    <Resource Include="Images\Icons\target.png" />
+    <Resource Include="Images\Icons\television-1.png" />
+    <Resource Include="Images\Icons\television.png" />
+    <Resource Include="Images\Icons\time.png" />
+    <Resource Include="Images\Icons\trash.png" />
+    <Resource Include="Images\Icons\umbrella.png" />
+    <Resource Include="Images\Icons\unlink.png" />
+    <Resource Include="Images\Icons\unlocked-1.png" />
+    <Resource Include="Images\Icons\unlocked-2.png" />
+    <Resource Include="Images\Icons\unlocked.png" />
+    <Resource Include="Images\Icons\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

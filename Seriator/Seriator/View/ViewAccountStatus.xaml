@@ -1,0 +1,52 @@
+﻿
+        <Window x:Name="AccountStatus" x:Class="Seriator.View.ViewAccountStatus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Seriator.View"
+        mc:Ignorable="d"
+        Title="Status da Conta" Height="650" Width="1040" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" Closing="AccountStatus_Closing" Background="{x:Null}" Icon="/Seriator;component/Images/Icons/icon.png">
+
+    <!-- Remove button hover property-->
+    <Window.Resources>
+        <Style x:Key="NoHover" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <!-- End of property-->
+    <Grid x:Name="AccountStatusWindow">
+        <Label x:Name="lblTitle" Content="Status da Conta" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="48" FontFamily="Mongolian Baiti" Margin="79,26,0,0"/>
+        <Separator x:Name="Separator" HorizontalAlignment="Left" Height="100" Margin="0,46,0,0" VerticalAlignment="Top" Width="685" Background="White"/>
+        <Label x:Name="lblDescription" Content="Aqui você vai encontrar o nível do seu vício. Você sabe o quanto já assistiu?" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,128,0,0" Width="966" FontSize="18.667" FontFamily="Mongolian Baiti" Foreground="White"/>
+        <Label x:Name="lblSubtitle" Content="Você assistiu:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" Margin="10,168,0,0" Foreground="White" FontSize="29.333" FontFamily="Mongolian Baiti"/>
+        <Image x:Name="imgTitle" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="82" Source="/Animator;component/Images/Icons/0.png" RenderTransformOrigin="2.46,0.67" Margin="10,10,0,0"/>
+        <Label x:Name="lblHours" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" Margin="10,243,0,0" Foreground="White" FontSize="29.333" FontFamily="Mongolian Baiti" BorderThickness="0" BorderBrush="White"/>
+        <Label x:Name="lblDays" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" Margin="10,307,0,0" Foreground="White" FontSize="29.333" FontFamily="Mongolian Baiti" BorderThickness="0" BorderBrush="White"/>
+        <Label x:Name="lblMonths" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="266" Margin="10,373,0,0" Foreground="White" FontSize="29.333" FontFamily="Mongolian Baiti" BorderBrush="White" BorderThickness="0"/>
+        <Image x:Name="imgHours" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="49" Margin="307,243,0,0" Source="/Seriator;component/Images/Icons/clock.png" ToolTip="Em horas"/>
+        <Image x:Name="imgMonths" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="49" Margin="307,373,0,0" Source="/Seriator;component/Images/Icons/calendar.png" ToolTip="Em meses"/>
+        <Image x:Name="imgDays" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="49" Margin="307,306,0,0" Source="/Seriator;component/Images/Icons/alarm-clock.png" ToolTip="Em dias"/>
+        <Button x:Name="btnPrevious" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="944,531,0,0" Height="80" ToolTip="Click to go to previous window." BorderThickness="0" Click="btnPrevious_Click" Style="{StaticResource NoHover}">
+            <Button.Background>
+                <ImageBrush ImageSource="/Seriator;component/Images/Icons/exit-1.png"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
